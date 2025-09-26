@@ -5,7 +5,6 @@ namespace App\Livewire\Dashboard\Saving;
 use App\Models\Saving;
 use App\Models\SavingTransaction;
 use App\Models\Transaction;
-use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
 class AddSavingTransaction extends Component

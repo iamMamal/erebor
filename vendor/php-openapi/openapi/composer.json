@@ -1,0 +1,145 @@
+{
+	"name": "php-openapi/openapi",
+	"description": "Read and write OpenAPI yaml/json files and make the content accessible in PHP objects.",
+	"keywords": ["openapi"],
+	"homepage": "https://github.com/openapi-php/php-openapi",
+	"type": "library",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Carsten Brandt",
+			"email": "mail@cebe.cc",
+			"homepage": "https://cebe.cc/",
+			"role": "Creator"
+		},
+		{
+			"name": "Vicent Valls",
+			"email": "vizzent@gmail.com"
+		}
+	],
+	"support": {
+		"issues": "https://github.com/openapi-php/php-openapi/issues",
+		"source": "https://github.com/openapi-php/php-openapi"
+	},
+	"require": {
+		"php": "^8.1 || ^8.2 || ^8.3 || ^8.4",
+		"ext-json": "*",
+		"symfony/yaml": "^6.1 || ^7.0",
+		"justinrainbow/json-schema": "^5.2 || ^6.0"
+	},
+	"require-dev": {
+		"cebe/indent": "*",
+		"phpunit/phpunit": "^10.0",
+
+		"oai/openapi-specification-3.0": "3.0.3",
+		"oai/openapi-specification-3.1": "3.1.1",
+
+		"mermade/openapi3-examples": "1.0.0",
+		"apis-guru/openapi-directory": "1.0.0",
+		"phpstan/phpstan": "^1.10.0",
+		"rector/rector": "^1.0",
+		"doctrine/coding-standard": "^12.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"openapiphp\\openapi\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"OpenApiTest\\": "tests"
+		}
+	},
+	"scripts": {
+		"ci": [
+			"@lint",
+			"@test"
+		],
+		"ci-coverage": [
+			"@lint",
+			"@cs-check",
+			"@test-coverage",
+			"@stan",
+			"@rector-check"
+		],
+		"cs-check": "phpcs",
+		"cs-fix": [
+			"indent --tabs composer.json",
+			"phpcbf"
+		],
+		"stan": "phpstan analyse",
+		"stan-baseline": "@php -dzend.assertions=-1 vendor/bin/phpstan analyse --generate-baseline phpstan-baseline.php",
+		"test": "@php -dzend.assertions=1 ./vendor/bin/phpunit  --no-coverage",
+		"test-coverage": "@php -dxdebug.mode=coverage -dzend.assertions=1 ./vendor/bin/phpunit",
+		"rector-fix": [
+			"rector process",
+			"@cs-fix"
+		],
+		"rector-check": "rector process --dry-run",
+		"lint": [
+			"find src -name \"*.php\" -print0 | xargs -0 -n1 -P4 php -ln | (! grep -v \"No syntax errors detected\" )",
+			"bin/php-openapi validate tests/spec/data/reference/playlist.json",
+			"bin/php-openapi validate tests/spec/data/recursion.json",
+			"bin/php-openapi validate tests/spec/data/recursion2.yaml",
+			"bin/php-openapi validate tests/spec/data/empty-maps.json"
+		]
+
+	},
+	"bin": [
+		"bin/php-openapi"
+	],
+	"repositories": [
+		{
+			"type": "package",
+			"package": {
+				"name": "oai/openapi-specification-3.0",
+				"version": "3.0.3",
+				"source": {
+					"url": "https://github.com/OAI/OpenAPI-Specification",
+					"type": "git",
+					"reference": "3.0.3"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "oai/openapi-specification-3.1",
+				"version": "3.1.1",
+				"source": {
+					"url": "https://github.com/OAI/OpenAPI-Specification",
+					"type": "git",
+					"reference": "3.1.1"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "mermade/openapi3-examples",
+				"version": "1.0.0",
+				"source": {
+					"url": "https://github.com/Mermade/openapi3-examples",
+					"type": "git",
+					"reference": "9c2997e1a25919a8182080cc43a4db06d2dc775d"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "apis-guru/openapi-directory",
+				"version": "1.0.0",
+				"dist": {
+					"url": "https://github.com/APIs-guru/openapi-directory/archive/refs/heads/openapi3.0.0.zip",
+					"type": "zip"
+				}
+			}
+		}
+	],
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	}
+}

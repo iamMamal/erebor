@@ -3,7 +3,6 @@
 namespace App\Livewire\Dashboard\Ai;
 
 
-use App\Services\EliBotService;
 use Livewire\Component;
 
 class Elibot extends Component

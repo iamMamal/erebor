@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Livewire\Dashboard\Ai;
-use App\Models\Transaction;
 use App\Models\Account;
+use App\Models\Transaction;
+
 class EliBotCommandHandler
 {
     public function handle(array $command, $userId)

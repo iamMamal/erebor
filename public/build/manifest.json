@@ -1,0 +1,56 @@
+{
+  "resources/assets/line-awesome/fonts/la-brands-400.woff": {
+    "file": "assets/la-brands-400-D0lxOIwB.woff",
+    "src": "resources/assets/line-awesome/fonts/la-brands-400.woff"
+  },
+  "resources/assets/line-awesome/fonts/la-brands-400.woff2": {
+    "file": "assets/la-brands-400-Cq-R4OEF.woff2",
+    "src": "resources/assets/line-awesome/fonts/la-brands-400.woff2"
+  },
+  "resources/assets/line-awesome/fonts/la-regular-400.woff": {
+    "file": "assets/la-regular-400-ehe5HgcS.woff",
+    "src": "resources/assets/line-awesome/fonts/la-regular-400.woff"
+  },
+  "resources/assets/line-awesome/fonts/la-regular-400.woff2": {
+    "file": "assets/la-regular-400-DuFMN_sw.woff2",
+    "src": "resources/assets/line-awesome/fonts/la-regular-400.woff2"
+  },
+  "resources/assets/line-awesome/fonts/la-solid-900.woff": {
+    "file": "assets/la-solid-900-CR_Kd-su.woff",
+    "src": "resources/assets/line-awesome/fonts/la-solid-900.woff"
+  },
+  "resources/assets/line-awesome/fonts/la-solid-900.woff2": {
+    "file": "assets/la-solid-900-TjMEgv3Q.woff2",
+    "src": "resources/assets/line-awesome/fonts/la-solid-900.woff2"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-DchjXzpI.css",
+    "src": "resources/css/app.css",
+    "isEntry": true,
+    "names": [
+      "app.css"
+    ]
+  },
+  "resources/css/vazir/XX.woff": {
+    "file": "assets/XX-Bc4u6vYg.woff",
+    "src": "resources/css/vazir/XX.woff"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-D-CCNKbD.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "css": [
+      "assets/app-DchjXzpI.css"
+    ],
+    "assets": [
+      "assets/la-brands-400-Cq-R4OEF.woff2",
+      "assets/la-brands-400-D0lxOIwB.woff",
+      "assets/la-regular-400-DuFMN_sw.woff2",
+      "assets/la-regular-400-ehe5HgcS.woff",
+      "assets/la-solid-900-TjMEgv3Q.woff2",
+      "assets/la-solid-900-CR_Kd-su.woff",
+      "assets/XX-Bc4u6vYg.woff"
+    ]
+  }
+}

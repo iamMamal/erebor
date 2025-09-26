@@ -2,16 +2,16 @@ import '../css/app.css';
 import './livewire-datepicker-datepicker';
 
 import Chart from 'chart.js/auto';
+import Swal from 'sweetalert2'
+import ApexCharts from 'apexcharts';
+import {NumberToWords} from "persian-tools2"
+
 window.Chart = Chart;
 
-import Swal from 'sweetalert2'
 window.Swal = Swal;
 
-import ApexCharts from 'apexcharts';
 window.ApexCharts = ApexCharts;
 
-
-import {  NumberToWords } from "persian-tools2"
 
 function addCommas(num) {
     if (!num) return '';

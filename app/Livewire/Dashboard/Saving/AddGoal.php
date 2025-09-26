@@ -3,7 +3,6 @@
 namespace App\Livewire\Dashboard\Saving;
 
 use App\Models\Saving;
-use Illuminate\Support\Facades\Request;
 use Livewire\Component;
 
 class AddGoal extends Component

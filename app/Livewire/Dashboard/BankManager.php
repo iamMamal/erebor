@@ -3,7 +3,6 @@
 namespace App\Livewire\Dashboard;
 
 use App\Models\Account;
-use Livewire\Attributes\On;
 use Livewire\Component;
 
 class BankManager extends Component
