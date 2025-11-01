@@ -10,6 +10,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "intervention/image": "2.7",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",
         "livewire/flux": "^2.1.1",
@@ -17,7 +18,8 @@
         "livewire/volt": "^1.7.0",
         "morilog/jalali": "^3.4",
         "openai-php/client": "^0.16.0",
-        "php-openapi/openapi": "^2.0"
+        "php-openapi/openapi": "^2.0",
+        "ext-soap": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

@@ -13,6 +13,8 @@ return [
         'period' => 'بازه زمانی',
         'debtChose' => 'قسط',
         'Password' => 'کلمه عبور',
+        'code' => 'کد',
+        'name' => 'نام',
 
     ],
 

@@ -183,6 +183,10 @@
         )
     });
 </script>
+@if (session('reload'))
+    <script> window.location.reload(); </script>
+@endif
+
 
 @stack('scripts')
 

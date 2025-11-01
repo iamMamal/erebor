@@ -792,6 +792,8 @@ class Middleware
                 ? \Illuminate\Routing\Middleware\ThrottleRequestsWithRedis::class
                 : \Illuminate\Routing\Middleware\ThrottleRequests::class,
             'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+            'AdminOnly' => \App\Http\Middleware\AdminOnly::class, // 👈 اینو اضافه کن
+            'EnsureVerifyCodeSession' => \App\Http\Middleware\EnsureVerifyCodeSession::class, // 👈 اینو اضافه کن
         ];
 
         if (class_exists(\Spark\Http\Middleware\VerifyBillableIsSubscribed::class)) {

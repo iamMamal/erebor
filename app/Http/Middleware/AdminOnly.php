@@ -15,8 +15,8 @@ class AdminOnly
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (!auth()->check() || !auth()->user()->isAdmin) {
-            abort(403); // یا redirect('/');
+        if (!auth()->check() || !auth()->user()->is_admin) {
+            abort(403, 'شما دسترسی به این بخش را ندارید.');
         }
 
         return $next($request);

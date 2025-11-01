@@ -6,7 +6,6 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
-
 class Logout
 {
     /**
@@ -16,8 +15,10 @@ class Logout
     {
         Auth::guard('web')->logout();
 
-        Session::invalidate();
-        Session::regenerateToken();
-        return redirect()->route('welcome');
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
+
+        // اجباری reload برای پاک شدن stateهای Livewire
+        return redirect('/')->with('reload', true);
     }
 }

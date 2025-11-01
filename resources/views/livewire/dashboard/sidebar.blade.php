@@ -1,63 +1,126 @@
 <ul
     class="overflow-auto menu-inner " >
     <!-- Dashboards -->
-                    <li
-                         class="{{ $activeRoute == 'dashboard' ?  'menu-item btn-primary' : 'menu-item' }}">
-                        <a  class="menu-link"  wire:navigate href="{{ route('dashboard') }}">
-                            <i class="menu-icon las la-home"></i>
-                            <div data-i18n="Dashboards">صفحه اصلی</div>
-                        </a>
-                    </li>
 
-                    <li
-                          class="{{ $activeRoute == 'dashboard.bank-manager' ?  'menu-item btn-primary' : 'menu-item' }}">
-                        <a  class="menu-link" wire:navigate href="{{route('dashboard.bank-manager')}}">
-                            <i class="menu-icon las la-university"></i>
-                            <div data-i18n="Dashboards">حساب ها</div>
-                        </a>
-                    </li>
-                    <li
-                        class="{{ $activeRoute == 'dashboard.transactions' ?  'menu-item btn-primary' : 'menu-item' }}">
-                        <a  class="menu-link" wire:navigate href="{{route('dashboard.transactions')}}">
-                            <i class="menu-icon las la-exchange-alt"></i>
-                            <div data-i18n="Dashboards">تراکنش ها</div>
-                        </a>
-                    </li>
     <li
-        class="{{ $activeRoute == 'dashboard.saving-manager' ?  'menu-item btn-primary' : 'menu-item' }}">
-        <a  class="menu-link" wire:navigate href="{{route('dashboard.saving-manager')}}">
-            <i class="menu-icon las la-piggy-bank"></i>
-            <div data-i18n="Dashboards">هدف پس انداز</div>
+        class="{{ $activeRoute == 'dashboard' ?  'menu-item btn-primary' : 'menu-item' }}">
+        <a  class="menu-link"  wire:navigate href="{{ route('admin.dashboard') }}">
+            <i class="menu-icon las la-home"></i>
+            <div data-i18n="Dashboards">صفحه اصلی</div>
+        </a>
+    </li>
+
+    @auth
+        @if(auth()->user()->is_admin)
+            <li
+                class="{{ $activeRoute == 'dashboard.user-manager' ?  'menu-item btn-primary' : 'menu-item' }}">
+                <a  class="menu-link" wire:navigate href="{{route('dashboard.user-manager')}}">
+                    <i class="menu-icon las la-university"></i>
+                    <div data-i18n="Dashboards">کاربران </div>
+                </a>
+            </li>
+            <li
+                class="{{ $activeRoute == 'dashboard.sliders' ?  'menu-item btn-primary' : 'menu-item' }}">
+                <a  class="menu-link" wire:navigate href="{{route('dashboard.sliders')}}">
+                    <i class="menu-icon las la-university"></i>
+                    <div data-i18n="Dashboards">اسلایدر </div>
+                </a>
+            </li>
+            <li
+                class="{{ $activeRoute == 'dashboard.pkg-manager' ?  'menu-item btn-primary' : 'menu-item' }}">
+                <a  class="menu-link" wire:navigate href="{{route('dashboard.pkg-manager')}}">
+                    <i class="menu-icon las la-university"></i>
+                    <div data-i18n="Dashboards">مدیریت پکیج </div>
+                </a>
+            </li>
+            <li
+                class="{{ $activeRoute == 'dashboard.shop-product' ?  'menu-item btn-primary' : 'menu-item' }}">
+                <a  class="menu-link" wire:navigate href="{{route('dashboard.shop-product')}}">
+                    <i class="menu-icon las la-university"></i>
+                    <div data-i18n="Dashboards">مدیریت محصولات </div>
+                </a>
+            </li>
+            <li
+                class="{{ $activeRoute == 'dashboard.support' ?  'menu-item btn-primary' : 'menu-item' }}">
+                <a  class="menu-link" wire:navigate href="{{route('dashboard.support')}}">
+                    <i class="menu-icon las la-university"></i>
+                    <div data-i18n="Dashboards">مدیریت پشتیبانی </div>
+                </a>
+            </li>
+            <li
+                class="{{ $activeRoute == 'dashboard.user-point' ?  'menu-item btn-primary' : 'menu-item' }}">
+                <a  class="menu-link" wire:navigate href="{{route('dashboard.user-point')}}">
+                    <i class="menu-icon las la-university"></i>
+                    <div data-i18n="Dashboards">امتیاز کاربران </div>
+                </a>
+            </li>
+            <li
+                class="{{ $activeRoute == 'dashboard.pkg-request' ?  'menu-item btn-primary' : 'menu-item' }}">
+                <a  class="menu-link" wire:navigate href="{{route('dashboard.pkg-request')}}">
+                    <i class="menu-icon las la-university"></i>
+                    <div data-i18n="Dashboards">درخواست پکیج ادمین</div>
+                </a>
+            </li>
+            <li
+                class="{{ $activeRoute == 'dashboard.evacuation-request' ?  'menu-item btn-primary' : 'menu-item' }}">
+                <a  class="menu-link" wire:navigate href="{{route('dashboard.evacuation-request')}}">
+                    <i class="menu-icon las la-university"></i>
+                    <div data-i18n="Dashboards">درخواست تخلیه ادمین </div>
+                </a>
+            </li>
+            <li
+                class="{{ $activeRoute == 'dashboard.referral' ?  'menu-item btn-primary' : 'menu-item' }}">
+                <a  class="menu-link" wire:navigate href="{{route('dashboard.referral')}}">
+                    <i class="menu-icon las la-university"></i>
+                    <div data-i18n="Dashboards">تنظیمات معرفی به دوستان </div>
+                </a>
+            </li>
+            <li
+                class="{{ $activeRoute == 'dashboard.shop-order' ?  'menu-item btn-primary' : 'menu-item' }}">
+                <a  class="menu-link" wire:navigate href="{{route('dashboard.shop-order')}}">
+                    <i class="menu-icon las la-university"></i>
+                    <div data-i18n="Dashboards">سفارشات فروشگاه</div>
+                </a>
+            </li>
+        @endif
+    @endauth
+
+    <li
+        class="{{ $activeRoute == 'dashboard.user.pkg-request' ?  'menu-item btn-primary' : 'menu-item' }}">
+        <a  class="menu-link" wire:navigate href="{{route('dashboard.user.pkg-request')}}">
+            <i class="menu-icon las la-recycle"></i>
+            <div data-i18n="Dashboards">درخواست پکیج </div>
         </a>
     </li>
     <li
-        class="{{ $activeRoute == 'dashboard.debt-manager' ?  'menu-item btn-primary' : 'menu-item' }}">
-        <a  class="menu-link" wire:navigate href="{{route('dashboard.debt-manager')}}">
-            <i class="menu-icon las la-calendar"></i>
-            <div data-i18n="Dashboards">قسط و بدهی ها</div>
+        class="{{ $activeRoute == 'dashboard.user.clearance-request' ?  'menu-item btn-primary' : 'menu-item' }}">
+        <a  class="menu-link" wire:navigate href="{{route('dashboard.user.clearance-request')}}">
+            <i class="menu-icon las la-truck-moving"></i>
+            <div data-i18n="Dashboards">درخواست تخلیه </div>
         </a>
     </li>
     <li
-        class="{{ $activeRoute == 'dashboard.elibot' ?  'menu-item btn-primary' : 'menu-item' }}">
-        <a  class="menu-link" wire:navigate href="{{route('dashboard.elibot')}}">
-            <i class="menu-icon las la-robot"></i>
-            <div data-i18n="Dashboards">الی بات</div>
+        class="{{ $activeRoute == 'dashboard.user.referral' ?  'menu-item btn-primary' : 'menu-item' }}">
+        <a  class="menu-link" wire:navigate href="{{route('dashboard.user.referral')}}">
+            <i class="menu-icon las la-users"></i>
+            <div data-i18n="Dashboards">معرفی به دوستان</div>
         </a>
     </li>
     <li
-        class="{{ $activeRoute == 'dashboard.dangodong' ?  'menu-item btn-primary' : 'menu-item' }}">
-        <a  class="menu-link" wire:navigate href="{{route('dashboard.dangodong')}}">
-            <i class="menu-icon las la-compress-arrows-alt"></i>
-            <div data-i18n="Dashboards">دنگ و دونگ</div>
+        class="{{ $activeRoute == 'dashboard.user.user-shop' ?  'menu-item btn-primary' : 'menu-item' }}">
+        <a  class="menu-link" wire:navigate href="{{route('dashboard.user.user-shop')}}">
+            <i class="menu-icon las la-shopping-cart"></i>
+            <div data-i18n="Dashboards">فروشگاه</div>
         </a>
     </li>
     <li
-        class="{{ $activeRoute == 'dashboard.update' ?  'menu-item btn-primary' : 'menu-item' }}">
-        <a  class="menu-link" wire:navigate href="{{route('dashboard.update')}}">
-            <i class="menu-icon las la-sliders-h"></i>
-            <div data-i18n="Dashboards">تنظیمات حساب کاربری</div>
+        class="{{ $activeRoute == 'user.settings' ?  'menu-item btn-primary' : 'menu-item' }}">
+        <a  class="menu-link" wire:navigate href="{{route('user.settings')}}">
+            <i class="menu-icon las la-cog"></i>
+            <div data-i18n="Dashboards">تنظیمات حساب</div>
         </a>
     </li>
+
     <li
         class="{{ $activeRoute == 'logout' ?  'menu-item btn-primary' : 'menu-item' }}">
             <form method="POST" action="{{ route('logout') }}">
@@ -68,16 +131,6 @@
         </button>
             </form>
     </li>
-    @auth
-        @if(auth()->user()->isAdmin)
-            <li
-                class="{{ $activeRoute == 'dashboard.show-users' ?  'menu-item btn-primary' : 'menu-item' }}">
-                <a  class="menu-link" wire:navigate href="{{route('dashboard.show-users')}}">
-                    <i class="menu-icon las la-lock"></i>
-                    <div data-i18n="Dashboards">مشاهده تمام کاربران</div>
-                </a>
-            </li>
-        @endif
-    @endauth
+
 
 </ul>
