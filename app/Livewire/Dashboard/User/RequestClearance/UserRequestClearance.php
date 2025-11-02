@@ -19,8 +19,9 @@ class UserRequestClearance extends Component
         $this->userId =  Auth()->id();
         $this->packages = PackageRequest::where('user_id', $this->userId)
             ->where('status', 'done')
-            ->with(['package', 'clearanceRequest'])
+            ->with(['package', 'clearanceRequest'])->orderBy('id', 'desc')
             ->get();
+
     }
 
     public function requestClearance($packageRequestId)
